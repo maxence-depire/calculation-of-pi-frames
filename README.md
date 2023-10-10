@@ -1,26 +1,64 @@
-# Calculation Of Pi Frames.
+# Calculation Of Pi Frames 👋🏻.
 
-Create the 08/10/2023 at 9:34pm in Rodez, France. By maxence-depire<br />
+Create the 📆 08/10/2023 at ⌚️ 9:34pm in 🗺 Rodez, France.<br />By maxence-depire 👨‍💻.
 
-This repo talk about a little python script who computes two frames of the number Pi. I have created this because my math professor have try to teach me the Archimedes method, and I try to replicate it with code.<br />
-Thanks the math professor.
+# Goal
+One day, a famous guy named "Archimedes", create a methods for compute two frames of the number Pi, a minimal, and a maximal. And another day, my math professor showed me this method. And today I try to compute with my method in this repo 👨‍💻.
 
-# The methods
-The goal is two computes two frames of Pi, a minimal, and a maximals frames. And we gonna solve this with a circle, and two polygons with the samed number of sides.
 
-<p align="center">
-    <img src="how.png" style="width:400px;" />
-</p>
-<br />
-
-In this image, we have a little polygon in the circle, and a big polygon around the circle. We know that the size of the circle area is equal to `pi x Diameter`, if we take a diameter of `1`, we got `pi`. So the polygon in the circle of diameter one, is smaller than the polygon arround the circle. And the two frames of `pi`, is equal the size of the area of the both polygons.
-
-## Little one.
-For compute the area of the little polygon we gonna split in many triangle, and we re-split a of triangle that we obtains. We normaly obtains a rectangular triangles.
+# The method
+For make this compute we need a circle of diameter `d`, and two polygon with `n` sides. For exemple:
 
 <p align="center">
-    <img src="little-one.png" style="width:400px;" />
+    <img src="method.png" width="400">
 </p>
-<br />
 
-So we can now compute the size area of a rectangular triangle.
+Here we have a polygon, in a circle, and a circle in a polygon. We know that the circle area is equal to `pi * diameter`. If we take a diameter of `1`, the diameter is now equal to `pi`.
+<br />
+<br />
+Now we want to find two frames, so we create two polygons and we know the area of the circle is equal to `pi` then, the area of the polygons is lower to `pi`, in the case of the little polygon, and superior to `pi`, in the case of the big polygon.
+<br />
+<br />
+We just need to find the area size of the two polygons.
+
+
+## Algorithm for the little one.
+I think the best method is to split the polygon in `n` triangle. So we obtains `n` equilateral triangle. Then we take one triangle and we split this one, we obtains a rectangular triangle.
+
+
+```
+Function LittleOne(n, d) // n is the polygon side number, and d the circle diameter.
+Start
+    bigTriangleCorner <-- 360 / n
+    littleTriangleCorner <-- bigTriangleCorner / 2
+
+    adjacentSide <-- COSINUS(littleTriangleCorner) * d
+    oppositeSide <-- SINUS(littleTriangleCorner) / d
+    areaSize <-- ( adjacentSide * oppositeSide ) / 2
+
+    totalArea <-- ( areaSize * 2 ) * n
+
+    RETURN totalArea
+End
+```
+
+
+## Algorithm for the big one.
+I want to use the same method as the little one, but the measure will not be the same. The adjacent side going to be equal to the circle diameter.
+
+
+```
+Function BigOne(n, d) // n is the polygon side number, and d the circle diameter.
+Start
+    bigTriangleCorner <-- 360 / n
+    littleTriangleCorner <-- bigTriangleCorner / 2
+
+    adjacentSide <-- d
+    oppositeSide <-- TANGENT(littleTriangleCorner) / d
+    areaSize <-- ( adjacentSide * oppositeSide ) / 2
+
+    totalArea <-- ( areaSize * 2 ) * n
+
+    RETURN totalArea
+End
+```

@@ -3,7 +3,7 @@
 Create the 📆 08/10/2023 at ⌚️ 9:34pm in 🗺 Rodez, France.<br />By maxence-depire 👨‍💻.
 
 # Goal
-One day, a famous guy named "Archimedes", create a methods for compute two frames of the number Pi, a minimal, and a maximal. And another day, my math professor showed me this method. And today I try to compute with my method in this repo 👨‍💻.
+One day, a famous guy named Archimedes, create a methods for calculate two frames of the number Pi. And another day, my math professor showed me this method. And today I try to reproduce the Archimedes skill in python 👨‍💻.
 
 
 # The method

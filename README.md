@@ -1,22 +1,21 @@
 # Calculation Of Pi Frames 👋🏻.
 
-Create the 📆 08/10/2023 at ⌚️ 9:34pm in 🗺 Rodez, France.<br />By maxence-depire 👨‍💻.
+Repo create the 📆 08/10/2023 at ⌚️ 9:34pm in 🗺 Rodez, France.<br />By maxence-depire 👨‍💻.
 
 # Goal
-One day, a famous guy named Archimedes, create a methods for calculate two frames of the number Pi. And another day, my math professor showed me this method. And today I try to reproduce the Archimedes skill in python 👨‍💻.
-
+Reproduce the Pi frames method of Archimedes, in python, and in Julia 💻.
 
 # The method
-For make this compute we need a circle of diameter `d`, and two polygon with `n` sides. For exemple:
+For make this compute we need a circle of diameter `d`, and two polygon with `n` sides, like this :
 
 <p align="center">
     <img src="method.png" width="400">
 </p>
 
-Here we have a polygon, in a circle, and a circle in a polygon. We know that the circle area is equal to `pi * diameter`. If we take a diameter of `1`, the diameter is now equal to `pi`.
+Here we have a polygon, in a circle, and a circle in a polygon. We know that the circle area is equal to `pi * diameter`. If we take a diameter of `1`, the diameter is now equal to `pi`. So the diameter need be fix to `1`.
 <br />
 <br />
-Now we want to find two frames, so we create two polygons and we know the area of the circle is equal to `pi` then, the area of the polygons is lower to `pi`, in the case of the little polygon, and superior to `pi`, in the case of the big polygon.
+Now we want to find two frames, so we need to create two polygons and we know the area of the circle is equal to `pi` then, the area of the polygons is lower to `pi`, in the case of the little polygon, and superior to `pi`, in the case of the big polygon.
 <br />
 <br />
 We just need to find the area size of the two polygons.

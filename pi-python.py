@@ -2,7 +2,7 @@ import math
 
 # Data
 diameter = 1
-sides = 40
+sides = 6
 
 def LittleOne(d, n):
     big_triangle_corner = 360 / n
@@ -30,6 +30,5 @@ def BigOne(d, n):
     return total_area
 
 
-print("Circle area is : ", (math.pow(diameter, 2) * math.pi))
 print("Little polygon is ", LittleOne(diameter, sides))
 print("Big polygon is ", BigOne(diameter, sides))

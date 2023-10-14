@@ -1,7 +1,7 @@
 import math
 
 # Data
-diameter = 1
+radius = 1
 sides = 6
 
 def LittleOne(d, n):
@@ -30,5 +30,5 @@ def BigOne(d, n):
     return total_area
 
 
-print("Little polygon is ", LittleOne(diameter, sides))
-print("Big polygon is ", BigOne(diameter, sides))
+print("Little polygon is ", LittleOne(radius, sides))
+print("Big polygon is ", BigOne(radius, sides))

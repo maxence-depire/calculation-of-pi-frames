@@ -3,19 +3,19 @@
 Repo create the 📆 08/10/2023 at ⌚️ 9:34pm in 🗺 Rodez, France.<br />By maxence-depire 👨‍💻.
 
 # Goal
-Reproduce the Pi frames method of Archimedes, in python, and in Julia 💻.
+Reproduce the Pi frames method of Archimedes, in Python, and in Julia 💻.
 
 # The method
-For make this compute we need a circle of diameter `d`, and two polygon with `n` sides, like this :
+For make this calculation we need a circle of diameter `d`, and two polygons with `n` sides, like this :
 
 <p align="center">
     <img src="images/method.png" width="300">
 </p>
 
-Is the explain:
-- The red circle area is equal to `pi * radiaus²`, so if we take a radius of 1, the result is equal to `pi`.
+Here's the explanation:
+- The red circle area is equal to `Pi * (r²)`, so if we take a radius of 1, the result is equal to `pi`.
 - Area of the blue polygon (the biggest), is greater than the circle.
-- And of course, the area of the red polygon is lower thant the circle.
+- And of course, the area of the red polygon (the smallest) is lower than the circle.
 
 So with this informations, we can create two frames of the number `pi`.
 

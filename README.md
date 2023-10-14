@@ -9,22 +9,43 @@ Reproduce the Pi frames method of Archimedes, in python, and in Julia 💻.
 For make this compute we need a circle of diameter `d`, and two polygon with `n` sides, like this :
 
 <p align="center">
-    <img src="method.png" width="400">
+    <img src="images/method.png" width="300">
 </p>
 
-Here we have a polygon, in a circle, and a circle in a polygon. We know that the circle area is equal to `pi * diameter`. If we take a diameter of `1`, the diameter is now equal to `pi`. So the diameter need be fix to `1`.
-<br />
-<br />
-Now we want to find two frames, so we need to create two polygons and we know the area of the circle is equal to `pi` then, the area of the polygons is lower to `pi`, in the case of the little polygon, and superior to `pi`, in the case of the big polygon.
-<br />
-<br />
-We just need to find the area size of the two polygons.
+Is the explain:
+- The red circle area is equal to `pi * radiaus²`, so if we take a radius of 1, the result is equal to `pi`.
+- Area of the blue polygon (the biggest), is greater than the circle.
+- And of course, the area of the red polygon is lower thant the circle.
 
+So with this informations, we can create two frames of the number `pi`.
 
-## Algorithm for the little one.
-I think the best method is to split the polygon in `n` triangle. So we obtains `n` equilateral triangle. Then we take one triangle and we split this one, we obtains a rectangular triangle.
+## How to found the area of a polygon ?
+The best method in this case is to split the polygon in `n` isosceles triangle.
 
+<p align="center">
+    <img src="images/method-2.png" width="300">
+</p>
 
+We know the formula for calculate the area of this type of triangle. But with don't whow all triangle value. So now, choose one of all isosceles triangle, and we gonna split it in two.
+
+<p align="center">
+    <img src="images/method-3.png" width="300">
+</p>
+
+And now, we have a rectangular triangle.
+- In the case of the little polygon, the hypotenuse of the rectangular triangle is equal to the diameter.
+- In the case of the big polygon, this is the segment between the center of the circle, and the polygon, who is equal to the circle diameter.
+
+And for found the other value of the triangle, in every case we use trigonometrie.
+
+We also know the angle at the apex (circle center) of the triangle. The formula of the angle is : 
+```
+( 360 / n ) / 2.
+```
+
+# All Algorithm.
+
+## Area of the little polygon.
 ```
 Function LittleOne(n, d) // n is the polygon side number, and d the circle diameter.
 Start
@@ -41,11 +62,7 @@ Start
 End
 ```
 
-
-## Algorithm for the big one.
-I want to use the same method as the little one, but the measure will not be the same. The adjacent side going to be equal to the circle diameter.
-
-
+## Area of the big polygon.
 ```
 Function BigOne(n, d) // n is the polygon side number, and d the circle diameter.
 Start
@@ -61,3 +78,10 @@ Start
     RETURN totalArea
 End
 ```
+
+## Note on the algorithm
+- First : I know, the diameter is fix. But it's math, and I have a serious problem in math reading. If I don't write the entire operation, I get lost.
+- And in second : yes we can compress, there is one hundrer other way's to make this project, but mine is there
+
+
+Thanks for reading !
